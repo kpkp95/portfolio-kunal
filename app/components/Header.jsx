@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { assets } from "@/asset/assets";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
@@ -7,23 +7,40 @@ import { motion } from "motion/react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const Header = () => {
-  const [mounted, setMounted] = useState(false);
-
-  const [text] = useTypewriter({
+  const [text, count] = useTypewriter({
     words: [
       "Frontend Developer ",
       "React & Next.js Enthusiast",
-      "Creating User-Friendly Interfaces",
+      "Creating User-Friendly Interfaces ",
     ],
-    loop: 0, // Infinite loop
+    loop: 0, // Set to `0` for infinite loop
     delaySpeed: 2000,
+    // Add these properties to keep the animation running:
     deleteSpeed: 50,
     typeSpeed: 80,
-    skipAddStyles: true,
+    skipAddStyles: true, // To prevent styling issues affecting visibility
   });
 
+  // Optional: Force animation to continue when tab becomes active again
   useEffect(() => {
-    setMounted(true);
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        // Force a re-render when tab becomes visible again
+        // This is a workaround to "kick" the animation back to life
+        const element = document.querySelector(".typewriter-wrapper");
+        if (element) {
+          element.style.opacity = "0.99";
+          setTimeout(() => {
+            element.style.opacity = "1";
+          }, 10);
+        }
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   return (
@@ -33,6 +50,7 @@ const Header = () => {
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+        viewport={{ once: false }} // Important: Change to false to animate each time it comes into view
       >
         <Image
           src={assets.profileround}
@@ -40,62 +58,57 @@ const Header = () => {
           className="w-60 rounded-[40px] rounded-t-[100px] rounded-b-[100px]"
         />
       </motion.div>
-
       <motion.h3
         className="items-end gap-2 text-xl md:text-2xl mb-1"
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: false }} // Change to false
       >
         Hi! I'm Kunal
       </motion.h3>
-
       <motion.h1
-        className="text-3xl lg:text-5xl px-12 py-6"
+        className="text-3xl lg:text-5xl px-12 py-6 typewriter-wrapper"
         initial={{ y: -30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
+        viewport={{ once: false }} // Change to false
       >
-        {mounted && (
-          <>
-            <span className="mr-3">{text}</span>
-            <Cursor cursorColor="#F7AB0A" />
-          </>
-        )}
+        <span className="mr-3">{text}</span>
+        <Cursor cursorColor="#F7AB0A" />
       </motion.h1>
-
+      {/* Rest of your component remains the same */}
       <motion.p
         className="max-w-3xl text-lg mx-auto font-ovo"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.7 }}
+        viewport={{ once: false }}
       >
         I am a Front-End Developer from Canada who loves building interactive
         websites and I am eager to contribute to a dynamic team.
       </motion.p>
-
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 py-5">
         <motion.a
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
+          viewport={{ once: false }}
           href="#contact"
           className="px-10 py-3 border rounded-full border-white flex bg-black text-white items-center gap-2 dark:bg-transparent dark:text-white"
         >
-          Contact Me
-          <FaArrowRightLong size="1.5em" color="white" />
+          contact me <FaArrowRightLong size="1.5em" color="white" />
         </motion.a>
-
         <motion.a
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
+          viewport={{ once: false }}
           href="/resume_kunal_pandey.pdf"
           download
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 dark:bg-white dark:text-black"
         >
-          <MdOutlineFileDownload size="1.5em" />
-          My Resume
+          <MdOutlineFileDownload size="1.5em" /> My Resume
         </motion.a>
       </div>
     </div>
