@@ -20,7 +20,7 @@ const Header = () => {
     loop: true, // Ensures it keeps running
     delaySpeed: 2000,
     deleteSpeed: 50,
-    typeSpeed: 80,
+    typeSpeed: 70,
   });
 
   // Observe when the component is in view
