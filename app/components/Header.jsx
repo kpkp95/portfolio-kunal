@@ -9,19 +9,36 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const Header = () => {
   const headerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(true);
+  const [words, setWords] = useState([]);
 
   // Typewriter Hook
   const [text] = useTypewriter({
-    words: [
-      "Frontend Developer ",
-      "React & Next.js Enthusiast",
-      "Creating User-Friendly Interfaces",
-    ],
-    loop: true, // Ensures it keeps running
+    words,
+    loop: true,
     delaySpeed: 2000,
     deleteSpeed: 50,
     typeSpeed: 70,
   });
+
+  // Set different words for mobile and desktop
+  useEffect(() => {
+    const updateWords = () => {
+      if (window.innerWidth < 640) {
+        setWords(["Frontend Developer", "React Lover"]);
+      } else {
+        setWords([
+          "Frontend Developer",
+          "React & Next.js Enthusiast",
+          "Building Fast, Responsive Web Apps",
+        ]);
+      }
+    };
+
+    updateWords(); // Set initial
+    window.addEventListener("resize", updateWords); // Update on resize
+
+    return () => window.removeEventListener("resize", updateWords);
+  }, []);
 
   // Observe when the component is in view
   useEffect(() => {
@@ -60,10 +77,10 @@ const Header = () => {
   return (
     <div
       ref={headerRef}
-      className="w-11/12 max-w-4xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-2 mb-0 pb-0"
+      className="w-11/12 max-w-4xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-2 mb-0 pb-0 "
     >
       <motion.div
-        className="mb-6"
+        className="mb-6 sm:mt-0 mt-15 "
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
