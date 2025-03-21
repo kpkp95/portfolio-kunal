@@ -80,7 +80,7 @@ const Header = () => {
       className="w-11/12 max-w-4xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-2 mb-0 pb-0 "
     >
       <motion.div
-        className="mb-6 sm:mt-0 mt-15 "
+        className="mb-6 sm:mt-0 mt-20 "
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
@@ -104,7 +104,7 @@ const Header = () => {
       </motion.h3>
 
       <motion.h1
-        className="text-3xl lg:text-5xl px-12 py-6 typewriter-wrapper"
+        className="text-2xl lg:text-5xl px-12 py-6 typewriter-wrapper"
         initial={{ y: -30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
