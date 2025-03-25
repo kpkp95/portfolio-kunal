@@ -1,6 +1,7 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const outFit = Outfit({
   subsets: ["latin"],
@@ -25,6 +26,8 @@ export default function RootLayout({ children }) {
       >
         {children}
         <Analytics />
+
+        <SpeedInsights />
       </body>
     </html>
   );
