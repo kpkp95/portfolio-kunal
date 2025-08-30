@@ -76,6 +76,7 @@ export const workData = [
     bgImage: assets.netflix_gpt,
     github: "https://github.com/kpkp95/netflix-gpt.git",
     bgImage1: "/Netflix_gpt.png",
+    projectURL: "https://netflix-gpt.vercel.app/",
   },
   {
     title: "Youtube-Clone 📺",
@@ -84,6 +85,16 @@ export const workData = [
     bgImage: assets.youtube_gpt,
     github: "https://github.com/kpkp95/my-youtube.git",
     bgImage1: "/youtube_gpt.png",
+    projectURL: "https://youtube-clone-kappa-tawny.vercel.app/",
+  },
+  {
+    title: "ApertureAI",
+    description:
+      "A browser-based AI-powered image editor built with Next.js, Clerk, React, Imagekit, and Fabric.js. It features background removal and replacement using generative AI, along with layer-based canvas tools for cropping, resizing, adjusting exposure/saturation, and saving projects.",
+    bgImage: assets.youtube_gpt,
+    github: "https://github.com/kpkp95/photoEditor.git", // replace with actual link
+    bgImage1: "/PhotoEditor.png", // replace with your image asset
+    projectURL: "https://photo-editor.vercel.app/", // replace with your live project URL
   },
 ];
 
