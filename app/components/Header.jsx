@@ -1,9 +1,11 @@
+"use client";
+
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { assets } from "@/asset/assets";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { MdOutlineFileDownload } from "react-icons/md";
-import { motion } from "framer-motion"; // Fix incorrect import from "motion/react"
+import { motion } from "motion/react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const Header = () => {
@@ -94,7 +96,7 @@ const Header = () => {
       </motion.div>
 
       <motion.h3
-        className="items-end gap-2 text-xl md:text-2xl mb:0 sm:mb-1"
+        className="items-end gap-2 text-xl md:text-2xl mb-0 sm:mb-1"
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
@@ -145,7 +147,7 @@ const Header = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
           viewport={{ once: false }}
-          href="/resume_kunal_pandey.pdf"
+          href="/kunal_pandey_resume.pdf"
           download
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 dark:bg-white dark:text-black"
         >

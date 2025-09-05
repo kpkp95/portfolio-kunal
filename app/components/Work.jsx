@@ -74,6 +74,14 @@ const Work = () => {
               >
                 Source Code
               </a>
+              <a
+                href={project.projectURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-4 pl-2 text-blue-600 hover:underline dark:border-white dark"
+              >
+                Project Link
+              </a>
             </div>
           </motion.div>
         ))}

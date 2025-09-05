@@ -1,50 +1,4 @@
-import code_icon from "./code-icon.png";
-import code_icon_dark from "./code-icon-dark.png";
-import vscode from "./vscode.png";
-import firebase from "./firebase.png";
-import git from "./git.png";
-import mongodb from "./mongodb.png";
-import logo_light from "./logo_light_.png";
-import logoDark from "./logo_dark_.png";
-import header_bg_color from "./header-bg-color.png";
-import profile from "./profile.jpeg";
-import profile_web from "./profile_web.jpeg";
-import profileround from "./profile-round.png";
-import react_100 from "./react_100.png";
-import react_light_icon from "./react_light_icon.png";
-import react_dark from "./react_dark.png";
-import nextjs_96 from "./nextjs_96.png";
-import nextjs_144 from "./nextjs_144.png";
-import tailwind_96 from "./tailwind_css-96.png";
-import tailwind_144 from "./tailwind_css-144.png";
-import bootstrap_96 from "./bootstrap_96.png";
-import performance_light from "./performance_light.png";
-import performance_dark from "./performance_dark.png";
-import youtube_gpt from "./youtube_gpt.png";
-import netflix_gpt from "./Netflix_gpt.png";
-import frontend_icon from "./frontend_icon.png";
-import backend_icon from "./backend_icon.png";
-import back_light from "./back_light.png";
-import back_dark from "./back_dark.png";
-import webDesign_light from "./webDesign_light.png";
-import tools_dark from "./tools_dark.png";
-import tools_light from "./tools-light.png";
-import webDesign_dark from "./webDesign_dark.png";
-
-export const assets = {
-  tools_dark,
-  tools_light,
-  profile,
-  webDesign_light,
-  performance_light,
-  performance_dark,
-  webDesign_dark,
-  back_light,
-  back_dark,
-  youtube_gpt,
-  netflix_gpt,
-  react_light_icon,
-  backend_icon,
+﻿  backend_icon,
   frontend_icon,
   performance_light,
   backend_icon,
@@ -70,17 +24,16 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Netflix-GPT 🎬",
+    title: "Netflix-GPT ðŸŽ¬",
     description:
       "Netflix-GPT is an AI-powered movie search and recommendation app built with React, Redux, and Tailwind CSS. It integrates OpenAI's GPT and the TMDb API to provide intelligent movie suggestions and real-time search functionality.",
     bgImage: assets.netflix_gpt,
     github: "https://github.com/kpkp95/netflix-gpt.git",
     bgImage1: "/Netflix_gpt.png",
-    projectURL:
-      "https://netflix-gpt-git-main-kunal-s-projects-0fe2d336.vercel.app/",
+    projectURL: "https://netflix-gpt.vercel.app/",
   },
   {
-    title: "Youtube-Clone 📺",
+    title: "Youtube-Clone ðŸ“º",
     description:
       "A YouTube Clone built with React and Tailwind CSS, featuring dynamic video rendering and search functionality using the YouTube API. It delivers a seamless video streaming experience with a responsive and modern UI.",
     bgImage: assets.youtube_gpt,
@@ -95,7 +48,7 @@ export const workData = [
     bgImage: assets.youtube_gpt,
     github: "https://github.com/kpkp95/photoEditor.git", // replace with actual link
     bgImage1: "/PhotoEditor.png", // replace with your image asset
-    projectURL: "https://photo-editor-snowy.vercel.app/", // replace with your live project URL
+    projectURL: "https://photo-editor.vercel.app/", // replace with your live project URL
   },
 ];
 

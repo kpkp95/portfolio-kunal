@@ -56,7 +56,7 @@ const Services = ({ isDarkMode }) => {
               <Image
                 src={isDarkMode ? darkIcon : icon}
                 width={40}
-                alt="title"
+                alt={title}
               />
               <h3 className="text-lg my-4 text-gray-900 dark:text-white">
                 {title}

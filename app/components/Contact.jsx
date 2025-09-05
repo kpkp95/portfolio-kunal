@@ -23,7 +23,7 @@ const Contact = () => {
 
       const data = await response.json();
       if (data.success) {
-        setResult("✅ Form Submitted Successfully!");
+        setResult("✅ Form submitted successfully!");
         event.target.reset();
       } else {
         console.error("Error:", data);
@@ -84,7 +84,6 @@ const Contact = () => {
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            onSubmit={onSubmit}
             type="text"
             placeholder="Enter your name"
             required
@@ -138,3 +137,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

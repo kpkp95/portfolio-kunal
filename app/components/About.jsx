@@ -25,13 +25,13 @@ const About = ({ isDarkMode }) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="flex flex-col w-full lg:flex-row items-center gap-10 sm:gap-20 my-10 sm:my-20"
+        className="flex flex-col w-full lg:flex-row items-start gap-10 md:gap-16 lg:gap-20 xl:gap-24 my-10 sm:my-20 max-w-6xl mx-auto"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="flex sm:hidden w-full max-w-xs rounded-3xl mx-auto"
+          className="flex sm:hidden w-full max-w-cs rounded-3xl mx-auto"
         >
           <Image
             src={assets.profile}
@@ -43,7 +43,7 @@ const About = ({ isDarkMode }) => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="hidden sm:flex w-full max-w-xs rounded-3xl mx-auto"
+          className="hidden sm:flex flex-shrink-0 w-72 md:w-80 lg:w-88 rounded-3xl mx-auto sm:mx-0"
         >
           <Image
             src={assets.profile_web}
@@ -56,9 +56,9 @@ const About = ({ isDarkMode }) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex-1"
+          className="flex-1 min-w-0"
         >
-          <p className="mb-10 max-w-2xl font-ovo text-justify p-2 sm:p-0">
+          <p className="mb-10 max-w-2xl lg:max-w-3xl font-ovo text-justify p-2 sm:p-0">
             I am a passionate front-end developer with a strong foundation in
             building responsive and user-friendly web applications.I have
             developed several projects using React, Tailwind CSS, and
@@ -73,7 +73,7 @@ const About = ({ isDarkMode }) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl "
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl lg:max-w-3xl "
           >
             {infoList.map(({ icon, iconDark, title, description }, index) => (
               <motion.li
@@ -107,7 +107,7 @@ const About = ({ isDarkMode }) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.6 }}
-            className="flex flex-wrap items-center gap-3 sm-gap-5"
+            className="flex flex-wrap items-center gap-3 sm:gap-5"
           >
             {toolsData.map((tool, index) => (
               <motion.li

@@ -1,4 +1,4 @@
-import code_icon from "./code-icon.png";
+﻿import code_icon from "./code-icon.png";
 import code_icon_dark from "./code-icon-dark.png";
 import vscode from "./vscode.png";
 import firebase from "./firebase.png";
@@ -70,17 +70,16 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Netflix-GPT 🎬",
+    title: "Netflix-GPT ðŸŽ¬",
     description:
       "Netflix-GPT is an AI-powered movie search and recommendation app built with React, Redux, and Tailwind CSS. It integrates OpenAI's GPT and the TMDb API to provide intelligent movie suggestions and real-time search functionality.",
     bgImage: assets.netflix_gpt,
     github: "https://github.com/kpkp95/netflix-gpt.git",
     bgImage1: "/Netflix_gpt.png",
-    projectURL:
-      "https://netflix-gpt-git-main-kunal-s-projects-0fe2d336.vercel.app/",
+    projectURL: "https://netflix-gpt.vercel.app/",
   },
   {
-    title: "Youtube-Clone 📺",
+    title: "Youtube-Clone ðŸ“º",
     description:
       "A YouTube Clone built with React and Tailwind CSS, featuring dynamic video rendering and search functionality using the YouTube API. It delivers a seamless video streaming experience with a responsive and modern UI.",
     bgImage: assets.youtube_gpt,
@@ -95,7 +94,7 @@ export const workData = [
     bgImage: assets.youtube_gpt,
     github: "https://github.com/kpkp95/photoEditor.git", // replace with actual link
     bgImage1: "/PhotoEditor.png", // replace with your image asset
-    projectURL: "https://photo-editor-snowy.vercel.app/", // replace with your live project URL
+    projectURL: "https://photo-editor.vercel.app/", // replace with your live project URL
   },
 ];
 
@@ -139,29 +138,3 @@ export const infoList = [
     icon: assets.code_icon,
     iconDark: assets.code_icon_dark,
     title: "Languages",
-    description: "JavaScript, TypeScript, Python",
-  },
-  {
-    icon: assets.react_light_icon, // React component used properly
-    iconDark: assets.react_dark,
-    title: "Technologies",
-    description: "React, Next.js, Tailwind CSS, Bootstrap, MongoDB, Firebase",
-  },
-  {
-    icon: assets.tools_light,
-    iconDark: assets.tools_dark,
-    title: "Tools & Platforms",
-    description: "Git, GitHub, VS Code, Vercel, Netlify",
-  },
-];
-
-export const toolsData = [
-  assets.vscode,
-  assets.firebase,
-  assets.mongodb,
-  assets.tailwind_96,
-  assets.bootstrap_96,
-  assets.git,
-  assets.react_100,
-  assets.nextjs_96,
-];

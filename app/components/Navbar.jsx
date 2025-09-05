@@ -25,13 +25,16 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
     sideMenuRef.current?.style.setProperty("transform", "translateX(16rem)");
   };
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (scrollY > 50) {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
         setIsScroll(true);
       } else {
         setIsScroll(false);
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
