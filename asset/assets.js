@@ -76,8 +76,7 @@ export const workData = [
     bgImage: assets.netflix_gpt,
     github: "https://github.com/kpkp95/netflix-gpt.git",
     bgImage1: "/Netflix_gpt.png",
-    projectURL:
-      "https://netflix-gpt-git-main-kunal-s-projects-0fe2d336.vercel.app/",
+    projectURL: "https://netflix-gpt-five-tan.vercel.app/",
   },
   {
     title: "Youtube-Clone 📺",
