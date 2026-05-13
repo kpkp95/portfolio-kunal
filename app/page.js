@@ -3,12 +3,11 @@
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import About from "./components/About";
-import Services from "./components/Services";
 import Work from "./components/Work";
 
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);

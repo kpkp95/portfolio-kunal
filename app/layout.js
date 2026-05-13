@@ -15,7 +15,8 @@ const ovo = Ovo({
 
 export const metadata = {
   title: "Kunal's Portfolio",
-  description: "",
+  description:
+    "Portfolio of Kunal Pandey, an AI/ML developer and data engineer building GenAI apps, ML pipelines, and cloud-deployed projects.",
 };
 
 export default function RootLayout({ children }) {

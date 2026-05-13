@@ -2,15 +2,10 @@
 import { assets } from "@/asset/assets";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import { FaLinkedin, FaGithub, FaReact } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "motion/react";
 
-import {
-  MdOutlineDarkMode,
-  MdOutlineArrowOutward,
-  MdClose,
-  MdOutlineLightMode,
-} from "react-icons/md";
+import { MdOutlineDarkMode, MdClose, MdOutlineLightMode } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = ({ isDarkMode, setIsDarkMode }) => {
@@ -120,7 +115,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.linkedin.com/in/pandey-kunal/"
+                href="https://www.linkedin.com/in/kunal-pandey25"
               >
                 <FaLinkedin
                   size="1.8em"
@@ -192,7 +187,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://www.linkedin.com/in/pandey-kunal/"
+              href="https://www.linkedin.com/in/kunal-pandey25"
             >
               <FaLinkedin
                 size="1.8em"

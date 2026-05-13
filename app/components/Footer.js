@@ -1,11 +1,9 @@
-import { assets } from "@/asset/assets";
-import Image from "next/image";
 import React from "react";
 import { MdOutlineMail } from "react-icons/md";
 import { RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { FaLinkedin, FaGithub, FaReact } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
 
-const Footer = ({ isDarkMode, setIsDarkMode }) => {
+const Footer = ({ isDarkMode }) => {
   return (
     <div className="  py-6 bg-[url('/footer-bg-color.png')] dark:bg-none ">
       <div className="text-center">

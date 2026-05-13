@@ -2,7 +2,6 @@
 
 import { workData } from "@/asset/assets";
 import React from "react";
-import Image from "next/image";
 import { motion } from "motion/react";
 
 const Work = () => {
@@ -22,18 +21,18 @@ const Work = () => {
       >
         My Projects
       </motion.h2>
+
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.7, duration: 0.5 }}
         className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo dark:text-white"
       >
-        Welcome to my web development portfolio! Here, you'll find projects that
-        highlight my expertise in front-end development, showcasing my skills in
-        building dynamic and responsive web applications.
+        A collection of ML, GenAI, cloud, and full-stack projects — from
+        production-deployed RAG systems and ML pipelines to BI dashboards and
+        web applications.
       </motion.p>
 
-      {/* Ensuring Two Columns on Larger Screens */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -42,46 +41,57 @@ const Work = () => {
       >
         {workData.map((project, index) => (
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
             key={index}
-            className="flex items-center border border-gray-400 rounded-lg p-4 md:p-6 hover:drop-shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500  dark:hover:bg-darkHover dark:hover:shadow-white"
+            className="flex flex-col border border-gray-400 rounded-lg p-4 md:p-6
+              hover:drop-shadow-black cursor-pointer hover:bg-lightHover
+              hover:-translate-y-1 duration-500 dark:hover:bg-darkHover
+              dark:hover:shadow-white"
           >
-            {/* Left Side - Image */}
-            <div className="hidden w-1/3">
-              <Image
-                src={project.bgImage}
-                width={200}
-                height={120}
-                alt={project.title}
-                className="rounded-lg"
-              />
-            </div>
-
-            {/* Right Side - Content */}
-            <div className="w-full pl-4">
+            {/* Title row with Live badge */}
+            <div className="flex items-center justify-between gap-2 mb-2">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                 {project.title}
               </h3>
-              <p className="text-sm text-gray-800 leading-5 mt-2 dark:text-white">
-                {project.description}
-              </p>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-4 text-blue-600 hover:underline dark:border-white dark"
-              >
-                Source Code
-              </a>
-              <a
-                href={project.projectURL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-4 pl-2 text-blue-600 hover:underline dark:border-white dark"
-              >
-                Project Link
-              </a>
+              {project.projectURL && (
+                <span
+                  className="shrink-0 text-xs font-medium px-2 py-0.5
+                  rounded-full border border-green-500 text-green-500
+                  dark:border-green-400 dark:text-green-400"
+                >
+                  Live
+                </span>
+              )}
+            </div>
+
+            {/* Description */}
+            <p className="text-sm text-gray-800 leading-5 dark:text-white/80 flex-1">
+              {project.description}
+            </p>
+
+            {/* Links */}
+            <div className="flex items-center gap-4 mt-4">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  Source Code
+                </a>
+              )}
+              {project.projectURL && (
+                <a
+                  href={project.projectURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  Live Demo →
+                </a>
+              )}
             </div>
           </motion.div>
         ))}

@@ -26,12 +26,12 @@ const Header = () => {
   useEffect(() => {
     const updateWords = () => {
       if (window.innerWidth < 640) {
-        setWords(["Frontend Developer", "React Lover"]);
+        setWords(["AI / ML Developer", "Data Engineer"]);
       } else {
         setWords([
-          "Frontend Developer",
-          "React & Next.js Enthusiast",
-          "Building Fast, Responsive Web Apps",
+          "AI / ML Developer",
+          "Data Engineer & GenAI Builder",
+          "Building RAG Systems & ML Pipelines",
         ]);
       }
     };
@@ -48,7 +48,7 @@ const Header = () => {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (headerRef.current) {
@@ -127,8 +127,9 @@ const Header = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
         viewport={{ once: false }}
       >
-        I am a Front-End Developer from Canada who loves building interactive
-        websites and I am eager to contribute to a dynamic team.
+        I build production-grade ML pipelines, RAG systems, and cloud-deployed
+        GenAI apps using Python, LangChain, Docker, AWS, and GCP — based in
+        Ontario, Canada.
       </motion.p>
 
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 py-5">
