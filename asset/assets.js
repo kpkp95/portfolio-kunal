@@ -110,8 +110,8 @@ export const infoList = [
     iconDark: assets.code_icon_dark,
     title: "ML & AI",
     description:
-      "Python, XGBoost, PyTorch, Scikit-learn, MLflow, LangChain, " +
-      "RAG, Pinecone, Embeddings, Hugging Face, Prompt Engineering, AI Agents",
+      "Python, ADK, PyTorch, Scikit-learn, MLflow, LangChain, " +
+      "RAG, Pinecone, Embeddings, Hugging Face, Prompt Engineering, AI Agents, Langchain",
   },
   {
     icon: assets.code_icon,
@@ -134,7 +134,7 @@ export const infoList = [
     iconDark: assets.code_icon_dark,
     title: "Web Dev",
     description:
-      "FastAPI, Flask, React, Next.js, and Tailwind CSS for responsive " +
+      "FastAPI, Flask, TypeScript,React, Next.js, and Tailwind CSS for responsive " +
       "apps, dashboards, and API-driven experiences",
   },
 ];
