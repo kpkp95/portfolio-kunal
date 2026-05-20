@@ -102,7 +102,8 @@ function formatSourceName(path: string): string {
     case "skills.txt": return "🛠️ Technical Skills";
     case "experience.txt": return "💼 Work History";
     case "project-details.txt": return "🚀 Featured Projects";
-    default: return `📄 ${file.replace(".txt", "")}`;
+    case "portfolio_rag_knowledge_base_master_profile.md": return "📖 Master Profile";
+    default: return `📄 ${file.replace(/\.(txt|md)$/, "")}`;
   }
 }
 

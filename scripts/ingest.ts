@@ -51,7 +51,7 @@ function extractSection(chunk: string, filename: string): string {
   if (h) return h[1].trim();
   const l = chunk.match(/^([A-Z][^.!?\n]{5,50})(?:\n|$)/m);
   if (l) return l[1].trim();
-  return filename.replace(".txt", "").replace(/-/g, " ");
+  return filename.replace(/\.(txt|md)$/, "").replace(/-/g, " ");
 }
 
 function extractProject(chunk: string): string | undefined {
@@ -91,10 +91,17 @@ async function main() {
   
   // ── 1. Collect and chunk files ───────────────────────────────────────────────
   const files = collectTextFiles(DATA_DIR);
-  console.log(`Found ${files.length} file(s) in /data:\n  ${files.join("\n  ")}\n`);
+  
+  // Also collect master profile from the root directory if present
+  const masterProfilePath = path.join(process.cwd(), "portfolio_rag_knowledge_base_master_profile.md");
+  if (fs.existsSync(masterProfilePath)) {
+    files.push(masterProfilePath);
+  }
+
+  console.log(`Found ${files.length} file(s) for ingestion:\n  ${files.join("\n  ")}\n`);
   
   if (!files.length) {
-    console.error("ERROR: No .txt files found in /data. Please populate text files to ingest.");
+    console.error("ERROR: No files found for ingestion.");
     process.exit(1);
   }
 
@@ -116,7 +123,7 @@ async function main() {
     
     chunks.forEach((c, i) => {
       allChunks.push({
-        id: `${filename.replace(".txt", "")}_chunk_${i}`,
+        id: `${filename.replace(/\.(txt|md)$/, "")}_chunk_${i}`,
         text: c,
         source: filename,
         section: extractSection(c, filename),
