@@ -67,7 +67,7 @@ function isRateLimited(ip: string, limit = 10, windowMs = 60 * 1000): boolean {
 
 export async function POST(req: NextRequest) {
   try {
-    const ip = req.headers.get("x-forwarded-for") || req.ip || "127.0.0.1";
+    const ip = req.headers.get("x-forwarded-for") || (req as any).ip || "127.0.0.1";
 
     if (isRateLimited(ip)) {
       console.warn(`Rate limit exceeded for IP: ${ip}`);
