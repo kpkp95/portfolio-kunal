@@ -95,6 +95,17 @@ function TypingDots() {
   );
 }
 
+function formatSourceName(path: string): string {
+  const file = path.split(/[\/\\]/).pop() || path;
+  switch (file) {
+    case "resume.txt": return "📄 Professional Resume";
+    case "skills.txt": return "🛠️ Technical Skills";
+    case "experience.txt": return "💼 Work History";
+    case "project-details.txt": return "🚀 Featured Projects";
+    default: return `📄 ${file.replace(".txt", "")}`;
+  }
+}
+
 export default function ChatMessage({ message, isDarkMode }: ChatMessageProps) {
   const isUser = message.role === "user";
 
@@ -154,7 +165,7 @@ export default function ChatMessage({ message, isDarkMode }: ChatMessageProps) {
                         : "bg-purple-50 text-purple-700 border border-purple-200"
                     }`}
                 >
-                  📄 {source}
+                  {formatSourceName(source)}
                 </span>
               ))}
             </div>

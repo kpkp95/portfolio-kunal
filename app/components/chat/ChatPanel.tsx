@@ -33,9 +33,34 @@ const WELCOME_MESSAGE: Message = {
 
 export default function ChatPanel({ isOpen, onClose, isDarkMode }: ChatPanelProps) {
   const [messages, setMessages] = useState<Message[]>([WELCOME_MESSAGE]);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Load from localStorage on mount (SSR safe)
+  useEffect(() => {
+    const saved = localStorage.getItem("portfolio_chat_messages");
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved).map((m: any) => ({
+          ...m,
+          timestamp: new Date(m.timestamp),
+        }));
+        setMessages(parsed);
+      } catch (e) {
+        console.error("Failed to parse saved chat messages", e);
+      }
+    }
+    setIsLoaded(true);
+  }, []);
+
+  // Save to localStorage on change
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem("portfolio_chat_messages", JSON.stringify(messages));
+    }
+  }, [messages, isLoaded]);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -203,6 +228,13 @@ export default function ChatPanel({ isOpen, onClose, isDarkMode }: ChatPanelProp
     e.target.style.height = `${Math.min(e.target.scrollHeight, 120)}px`;
   };
 
+  const resetChat = () => {
+    if (window.confirm("Are you sure you want to clear your conversation history?")) {
+      setMessages([WELCOME_MESSAGE]);
+      localStorage.removeItem("portfolio_chat_messages");
+    }
+  };
+
   const showSuggestedPrompts = messages.length <= 1;
 
   return (
@@ -261,6 +293,18 @@ export default function ChatPanel({ isOpen, onClose, isDarkMode }: ChatPanelProp
               >
                 <MdOutlineFileDownload size="1.2em" />
               </a>
+              {/* Reset Conversation Button */}
+              <button
+                onClick={resetChat}
+                title="Reset Conversation"
+                className={`p-2 rounded-lg transition hover:scale-110
+                  ${isDarkMode ? "hover:bg-white/10 text-white/60 hover:text-white" : "hover:bg-gray-100 text-gray-400 hover:text-gray-700"}`}
+              >
+                <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1.2em" width="1.2em">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                  <path d="M3 3v5h5"/>
+                </svg>
+              </button>
               <button
                 onClick={onClose}
                 className={`p-2 rounded-lg transition hover:scale-110
