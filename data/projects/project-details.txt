@@ -1,0 +1,78 @@
+KUNAL PANDEY — AI/ML DEVELOPER & DATA ENGINEER
+
+## Project: Domain RAG Assistant
+Category: AI / RAG / Cloud
+Deployed: AWS EC2
+GitHub: https://github.com/kpkp95/domain-rag-assistant
+Live: http://54.172.244.2:8080/
+
+The Domain RAG Assistant is Kunal's flagship NLP/AI project. It is a multi-domain RAG (Retrieval-Augmented Generation) chatbot that can answer questions from three specialized domains: Medical, Machine Learning, and LLM research papers.
+
+The system uses LangChain to orchestrate the RAG pipeline. Documents are loaded, chunked, and embedded using 384-dimensional sentence transformer embeddings. Embeddings are stored in Pinecone with rich metadata (file name, page number, domain, chunk ID) enabling fine-grained domain filtering at query time.
+
+Redis is used as a conversation memory store, enabling multi-turn dialogue with session persistence. This allows the chatbot to remember context across multiple messages within a session.
+
+The system achieved a perfect score of 12/12 on retrieval evaluation tests, demonstrating high-quality context retrieval. Source citations are returned per response, making it auditable and trustworthy.
+
+Deployment stack: The app runs on AWS EC2 using Docker containers, with automated CI/CD through GitHub Actions and a self-hosted GitHub Actions runner on EC2. Every push to main triggers a build and deployment.
+
+## Project: AI Job Recommender
+Category: GenAI / GCP / Full-Stack
+Deployed: Google Cloud Run
+GitHub: https://github.com/kpkp95/JobRecommender
+Live: https://ai-job-recommender-778318657000.us-central1.run.app
+
+The AI Job Recommender is a production-deployed GenAI career assistant. Users upload their resume as a PDF, and the system analyzes it using Google Gemini Flash on Vertex AI.
+
+The system delivers three outputs:
+1. Skill gap analysis report comparing current skills to job market demands
+2. A personalized 30-day learning roadmap
+3. Real-time job match recommendations scraped via the Apify API
+
+The backend is built with FastAPI and deployed on Google Cloud Run with secrets managed via GCP Secret Manager. Docker containerization ensures consistent environments across development and production.
+
+## Project: Housing Price Prediction
+Category: Machine Learning / AWS / MLOps
+Deployed: AWS ECS
+GitHub: https://github.com/kpkp95
+
+This project implements an XGBoost regression model trained on 800,000+ rows of real U.S. housing data. The model achieves R² ~0.87 with Optuna hyperparameter tuning.
+
+Technical highlights:
+- Optuna Bayesian hyperparameter optimization
+- Comprehensive model comparison: XGBoost vs Random Forest vs Linear Regression
+- FastAPI REST endpoint for predictions
+- Streamlit dashboard for interactive predictions
+- Full CI/CD pipeline with GitHub Actions
+- Containerized with Docker and deployed to AWS ECS (Elastic Container Service)
+
+## Kunal's Cloud Architecture Experience
+Kunal has deployed production applications across multiple cloud platforms:
+
+AWS Services Used:
+- EC2: Virtual machines for running the Domain RAG Assistant and other services
+- ECS: Container orchestration for the Housing Price Prediction app
+- ECR: Docker image registry for storing built images
+- S3: Object storage for ML artifacts
+- IAM: Permission management for cloud resources
+
+GCP Services Used:
+- Cloud Run: Serverless containers for the AI Job Recommender
+- Vertex AI: Managed ML platform for Gemini Flash model access
+- Secret Manager: Secure storage for API keys and credentials
+- Artifact Registry: Docker image storage
+
+CI/CD:
+- GitHub Actions pipelines with Docker build → push to registry → deploy
+- Self-hosted GitHub runner on AWS EC2 for the Domain RAG project
+
+## Kunal's Background
+Kunal is an AI/ML Developer and Data Engineer based in Ontario, Canada. He completed post-graduate studies in Artificial Intelligence at Seneca College and Cloud Computing at Cambrian College.
+
+His focus areas: GenAI applications, production ML pipelines, RAG systems, cloud deployment, and full-stack AI engineering.
+
+He is actively seeking co-op and full-time opportunities in AI/ML engineering, data engineering, and MLOps.
+
+Contact: kunal.pandey.work@outlook.com
+LinkedIn: https://www.linkedin.com/in/kunal-pandey25
+GitHub: https://github.com/kpkp95

@@ -6,11 +6,16 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ingest": "npx tsx scripts/ingest.ts"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@pinecone-database/pinecone": "^4.0.0",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
+    "dotenv": "^16.4.5",
+    "google-auth-library": "^10.6.2",
     "motion": "^12.5.0",
     "next": "15.2.8",
     "react": "^19.0.0",
@@ -22,8 +27,13 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.2",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
   }
 }

@@ -7,6 +7,7 @@ import Work from "./components/Work";
 
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ChatWidget from "./components/chat/ChatWidget";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -42,6 +43,9 @@ export default function Home() {
       <Work isDarkMode={isDarkMode} />
       <Contact isDarkMode={isDarkMode} />
       <Footer isDarkMode={isDarkMode} />
+
+      {/* Floating AI Portfolio Assistant */}
+      <ChatWidget isDarkMode={isDarkMode} />
     </>
   );
 }
