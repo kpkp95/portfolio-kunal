@@ -83,6 +83,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Message is required" }, { status: 400 });
     }
 
+    // Log the user's question, IP, and history count (ideal for Vercel/Axiom tracking)
+    console.log(
+      `[Chat Bot Query] IP: ${ip} | History: ${history.length} msgs | Asked: "${message.replace(/\n/g, " ")}"`
+    );
+
     // ── Step 1: Embed the query (automatically uses Vertex/HF/Gemini depending on env) ──
     let queryEmbedding: number[];
     try {
