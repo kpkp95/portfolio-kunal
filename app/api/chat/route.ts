@@ -44,8 +44,39 @@ function isVertexAIConfigured(): boolean {
   );
 }
 
+// In-memory cache for IP-based rate limiting
+const ipCache = new Map<string, { count: number; resetTime: number }>();
+
+function isRateLimited(ip: string, limit = 10, windowMs = 60 * 1000): boolean {
+  const now = Date.now();
+  const record = ipCache.get(ip);
+
+  if (!record || now > record.resetTime) {
+    // New window or expired window -> reset
+    ipCache.set(ip, { count: 1, resetTime: now + windowMs });
+    return false;
+  }
+
+  if (record.count >= limit) {
+    return true;
+  }
+
+  record.count++;
+  return false;
+}
+
 export async function POST(req: NextRequest) {
   try {
+    const ip = req.headers.get("x-forwarded-for") || req.ip || "127.0.0.1";
+
+    if (isRateLimited(ip)) {
+      console.warn(`Rate limit exceeded for IP: ${ip}`);
+      return NextResponse.json(
+        { error: "Too many requests. Please wait a minute before sending another message." },
+        { status: 429 }
+      );
+    }
+
     const { message, history = [] }: ChatRequest = await req.json();
 
     if (!message?.trim()) {
@@ -123,7 +154,7 @@ export async function POST(req: NextRequest) {
           },
           generationConfig: {
             temperature: 0.3,
-            maxOutputTokens: 1000,
+            maxOutputTokens: 400,
           },
         }),
       });
@@ -250,7 +281,7 @@ export async function POST(req: NextRequest) {
     const modelInstance = genAI.getGenerativeModel({
       model: CHAT_MODEL,
       systemInstruction: systemPrompt,
-      generationConfig: { temperature: 0.3, maxOutputTokens: 1000 },
+      generationConfig: { temperature: 0.3, maxOutputTokens: 400 },
     });
 
     const geminiHistory = history.slice(-4).map((msg) => ({
