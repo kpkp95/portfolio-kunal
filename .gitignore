@@ -41,3 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 myextra.md
+
+# google service account keys
+google-key.json
+*-key.json
+*credentials.json

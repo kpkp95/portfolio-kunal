@@ -1,0 +1,86 @@
+# Kunal Pandey — Skills & Technologies
+
+## Core Programming Languages
+- Python (primary language, 3+ years)
+- TypeScript / JavaScript
+- SQL
+
+## AI & Machine Learning
+- PyTorch: deep learning model development and training
+- Scikit-learn: classical ML algorithms, regression, classification, clustering
+- XGBoost: gradient boosting for tabular data (used in housing price prediction, R² ~0.87)
+- MLflow: experiment tracking, model registry, artifact storage
+- Optuna: hyperparameter tuning (Bayesian optimization)
+- Hugging Face Transformers: pre-trained models, fine-tuning
+- Sentence Transformers: semantic embeddings
+- Computer Vision (basic): image classification, object detection concepts
+
+## GenAI & LLMs
+- LangChain (Python): RAG pipelines, document loaders, text splitters, chain composition
+- LangChain JS: Node.js RAG implementations
+- OpenAI API: GPT-4, text-embedding-3-small, ChatCompletion
+- Gemini API (Google): Gemini Flash on Vertex AI for document analysis and reasoning
+- Prompt Engineering: system prompts, few-shot prompting, chain-of-thought
+- AI Agents (Google ADK): agent orchestration, tool use
+- RAG (Retrieval-Augmented Generation): full pipeline implementation
+- Embeddings: OpenAI text-embedding-3-small, HuggingFace sentence-transformers
+
+## Vector Databases & Storage
+- Pinecone: vector database for similarity search, metadata filtering, upsert and query
+- Redis: conversation memory / session caching (used in Domain RAG project)
+- MongoDB: document storage
+- Firebase: real-time database, authentication
+
+## Cloud Platforms
+### AWS
+- EC2: virtual machines for app deployment
+- ECS (Elastic Container Service): Docker container orchestration
+- ECR (Elastic Container Registry): Docker image registry
+- S3: object storage
+- IAM: identity and access management
+- CloudWatch: logging and monitoring
+
+### GCP (Google Cloud Platform)
+- Cloud Run: serverless container hosting
+- Vertex AI: Gemini model API hosting and fine-tuning
+- Secret Manager: secure environment variable storage
+- Artifact Registry: Docker image storage on GCP
+
+### Azure
+- Basic familiarity with Azure services
+
+## DevOps & CI/CD
+- Docker: containerization, Dockerfile authoring, multi-stage builds
+- Docker Compose: multi-container orchestration
+- GitHub Actions: CI/CD pipelines, automated testing, Docker build and push
+- Self-hosted GitHub Actions runners (used in Domain RAG project on AWS EC2)
+- Git: version control, branching strategies
+
+## Data Engineering & Analytics
+- Pandas: data manipulation and transformation
+- NumPy: numerical computing
+- SQL: data querying, joins, aggregations
+- Power BI & DAX: business intelligence dashboards
+- Plotly: interactive visualizations
+- Streamlit: rapid ML application deployment
+- ETL pipeline design
+
+## Web Development
+- FastAPI: high-performance Python REST APIs
+- Flask: lightweight Python web framework
+- React: component-based frontend development
+- Next.js: full-stack React framework (App Router)
+- Tailwind CSS: utility-first CSS framework
+- TypeScript: type-safe JavaScript
+
+## Tools & IDE
+- VS Code
+- Jupyter Notebooks
+- Git & GitHub
+- Postman (API testing)
+
+## Soft Skills
+- Strong problem-solving and analytical thinking
+- Ability to work across the full ML lifecycle (data → model → deployment → monitoring)
+- Experience with production deployment and MLOps best practices
+- Collaborative and team-oriented mindset

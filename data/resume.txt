@@ -1,0 +1,60 @@
+# Kunal Pandey — Resume
+
+## Personal Information
+Name: Kunal Pandey
+Location: Ontario, Canada
+Email: kunal.pandey.work@outlook.com
+LinkedIn: https://www.linkedin.com/in/kunal-pandey25
+GitHub: https://github.com/kpkp95
+
+## Professional Summary
+AI/ML Developer and Data Engineer based in Ontario, Canada, with hands-on experience building
+production-grade machine learning pipelines, RAG systems, and cloud-deployed GenAI applications.
+Completed post-graduate studies in Artificial Intelligence at Seneca College and Cloud Computing
+at Cambrian College. Projects span LangChain, Pinecone, MLflow, Docker, AWS, and GCP.
+Actively seeking a co-op opportunity to contribute across data, ML, and cloud engineering domains.
+
+## Education
+
+### Post-Graduate Certificate — Artificial Intelligence
+Seneca College, Ontario, Canada
+- Courses: Machine Learning, Deep Learning, NLP, Computer Vision, Reinforcement Learning
+- Projects: RAG chatbots, ML pipelines, LangChain agents
+
+### Post-Graduate Certificate — Cloud Computing
+Cambrian College, Ontario, Canada
+- Courses: AWS, Azure, GCP, Cloud Architecture, DevOps, Docker, Kubernetes
+- Projects: Cloud-deployed applications, CI/CD pipelines, containerized services
+
+## Technical Skills
+
+### AI / ML
+- Python, PyTorch, Scikit-learn, MLflow, XGBoost, Optuna
+- LangChain, LangChain JS, RAG (Retrieval-Augmented Generation)
+- Pinecone, Vector Databases, Embeddings (OpenAI, HuggingFace, Gemini)
+- Hugging Face, Prompt Engineering, AI Agents (ADK)
+- Gemini Flash, GPT-4, OpenAI API
+
+### Cloud & DevOps
+- AWS (EC2, ECR, ECS, S3, IAM, CloudWatch)
+- GCP (Cloud Run, Vertex AI, Secret Manager, Artifact Registry)
+- Azure (basic familiarity)
+- Docker, Docker Compose, container orchestration
+- GitHub Actions CI/CD, self-hosted runners
+- MLflow for experiment tracking and model registry
+
+### Data Engineering
+- Pandas, NumPy, SQL (PostgreSQL, MySQL)
+- Power BI, DAX, Plotly, Streamlit
+- ETL design and analytics workflows
+- Data cleaning, feature engineering
+
+### Web Development
+- FastAPI, Flask (Python backends)
+- React, Next.js, TypeScript, Tailwind CSS
+- Firebase, MongoDB, REST APIs
+- Vercel, cloud deployments
+
+## Certifications (if applicable)
+- AWS Cloud Practitioner (in progress / studied)
+- Google Cloud Associate (studied)

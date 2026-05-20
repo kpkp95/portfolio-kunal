@@ -1,0 +1,85 @@
+# Kunal Pandey — Work Experience & Projects
+
+## AI Job Recommender
+- Full-stack GenAI career assistant deployed on Google Cloud Run
+- Technologies: Python, FastAPI, Google Gemini Flash, Vertex AI, Apify API, GCP Cloud Run, Docker, GitHub Actions
+- Features:
+  - Parses uploaded resume PDFs
+  - Analyzes resume content using Gemini on Vertex AI
+  - Delivers skill-gap analysis reports
+  - Generates personalized 30-day learning roadmaps
+  - Provides real-time job match recommendations via Apify API
+- Deployment: Google Cloud Run (serverless, auto-scaling)
+- Live demo available
+
+## Domain RAG Assistant
+- Multi-domain RAG chatbot system deployed on AWS EC2
+- Technologies: Python, LangChain, Pinecone, Redis, Docker, GitHub Actions CI/CD, FastAPI, AWS EC2
+- Architecture:
+  - Indexes 384-dimensional sentence embeddings in Pinecone
+  - Metadata-based domain filtering (Medical, Machine Learning, LLM domains)
+  - Redis-backed conversation memory for session persistence
+  - Source citations returned per response (file, page, domain, chunk ID)
+- Performance: Achieved 12/12 retrieval evaluation tests (perfect accuracy)
+- Deployment: AWS EC2 via Docker + GitHub Actions CI/CD with self-hosted GitHub Actions runner
+- Live demo available at: http://54.172.244.2:8080/
+
+## Housing Price Prediction
+- XGBoost regression model for U.S. housing price prediction
+- Technologies: Python, XGBoost, Optuna, FastAPI, Streamlit, Docker, AWS ECS, GitHub Actions
+- Performance:
+  - Trained on 800,000+ rows of U.S. housing data
+  - Achieved R² ~0.87 with Optuna hyperparameter tuning
+  - Compared models: XGBoost vs Random Forest vs Linear Regression
+- Deployment: AWS ECS (Elastic Container Service) via Docker + GitHub Actions CI/CD
+- Interface: FastAPI backend endpoint + Streamlit dashboard for predictions
+- Pipeline: data ingestion → preprocessing → training → evaluation → deployment
+
+## Netflix-GPT
+- AI-powered movie recommendation application
+- Technologies: React, Redux Toolkit, Tailwind CSS, OpenAI GPT API, TMDb API, Firebase
+- Features:
+  - Intelligent movie search powered by GPT
+  - Real-time movie recommendations
+  - Authentication via Firebase
+  - Integration with The Movie Database (TMDb) API for movie metadata
+- Deployment: Vercel
+- Live demo: https://netflix-gpt-five-tan.vercel.app/
+
+## ApertureAI (Photo Editor)
+- Browser-based AI image editor
+- Technologies: Next.js, Clerk, Fabric.js, Generative AI
+- Features:
+  - Background removal via generative AI
+  - Layer-based canvas editing tools
+  - Cropping, resizing, exposure adjustment
+  - Authentication via Clerk
+- Deployment: Vercel
+- Live demo: https://photo-editor-snowy.vercel.app/
+
+## YouTube Clone
+- Full-featured YouTube clone
+- Technologies: React, Tailwind CSS, YouTube Data API
+- Features:
+  - Dynamic video rendering
+  - Video search functionality
+  - Responsive, modern UI matching YouTube's design
+  - Seamless video streaming experience
+- Deployment: Vercel
+- Live demo: https://youtube-clone-kappa-tawny.vercel.app/
+
+## HealthIQ AI Dashboard
+- End-to-end health analytics application
+- Technologies: Python, PyTorch, FastAPI, React, Gemini Flash AI
+- Features:
+  - ETL pipeline for Samsung Health CSV data
+  - PyTorch deep learning model for health pattern analysis
+  - FastAPI backend with ML inference endpoints
+  - React frontend with health visualizations
+  - Gemini Flash conversational AI assistant for health insights
+
+## ML Pipeline Projects
+- MLflow experiment tracking setup with model registry
+- Feature engineering and preprocessing pipelines
+- Model comparison and evaluation frameworks
+- Hyperparameter optimization with Optuna
